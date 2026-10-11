@@ -1,0 +1,721 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Арктика — мир льда</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #061a2b;
+  color: white;
+  line-height: 1.6;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #041526;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  border-bottom: 1px solid #24465d;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #67e8f9;
+}
+
+header {
+  min-height: 75vh;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background:
+    linear-gradient(#03132366, #031323ee),
+    url("https://images.unsplash.com/photo-1517783999520-f068d7431a60?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+}
+
+header h1 {
+  font-size: clamp(48px, 9vw, 90px);
+  line-height: 1.2;
+}
+
+header p {
+  max-width: 700px;
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.button {
+  display: inline-block;
+  background: #67e8f9;
+  color: #061a2b;
+  border: none;
+  border-radius: 30px;
+  padding: 13px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button:hover {
+  background: #a5f3fc;
+}
+
+section {
+  padding: 65px 8%;
+}
+
+h2 {
+  color: #a5f3fc;
+  font-size: 32px;
+  margin-bottom: 22px;
+}
+
+.intro {
+  max-width: 850px;
+  margin: auto;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: #102d43;
+  border: 1px solid #25485e;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card h3 {
+  color: #67e8f9;
+  margin-bottom: 10px;
+}
+
+.facts {
+  background: #0b263b;
+}
+
+.fact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+}
+
+.fact {
+  background: #16384e;
+  border-radius: 14px;
+  padding: 22px;
+  text-align: center;
+}
+
+.fact strong {
+  display: block;
+  color: #67e8f9;
+  font-size: 23px;
+  margin-bottom: 8px;
+}
+
+.future {
+  background: #0c3047;
+  text-align: center;
+}
+
+.future p {
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+
+.quiz-section {
+  max-width: 850px;
+  margin: 35px auto;
+  padding: 28px;
+  background: #102d43;
+  border: 1px solid #31536b;
+  border-radius: 18px;
+}
+
+.quiz-section h2 {
+  text-align: center;
+}
+
+.quiz-intro {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.quiz-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  color: #c1d8e6;
+  margin-bottom: 12px;
+}
+
+.progress-track {
+  width: 100%;
+  height: 9px;
+  background: #29485c;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+#progress {
+  height: 100%;
+  width: 0;
+  background: #67e8f9;
+  transition: width 0.2s;
+}
+
+#question {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#answers {
+  display: grid;
+  gap: 12px;
+}
+
+.answer {
+  background: #0a2235;
+  color: white;
+  border: 1px solid #45677c;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.answer:hover:not(:disabled) {
+  border-color: #67e8f9;
+  background: #153c52;
+}
+
+.answer:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+.answer.correct {
+  background: #14532d;
+  border-color: #4ade80;
+}
+
+.answer.wrong {
+  background: #7f1d1d;
+  border-color: #f87171;
+}
+
+#feedback {
+  min-height: 48px;
+  margin-top: 18px;
+  color: #a5f3fc;
+}
+
+.quiz-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+#nextButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+#result {
+  text-align: center;
+}
+
+#resultScore {
+  font-size: 50px;
+  color: #67e8f9;
+  font-weight: bold;
+  margin: 15px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+footer {
+  background: #04111e;
+  color: #b6cbd8;
+  text-align: center;
+  padding: 25px;
+}
+
+@media (max-width: 500px) {
+  nav {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  section {
+    padding: 45px 6%;
+  }
+
+  .quiz-section {
+    margin: 20px 6%;
+    padding: 20px;
+  }
+
+  #question {
+    font-size: 21px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#about">Об Арктике</a>
+  <a href="#animals">Животные</a>
+  <a href="#facts">Факты</a>
+  <a href="#future">Будущее</a>
+  <a href="#quiz">🧠 Пройти квиз</a>
+</nav>
+
+<header>
+  <h1>АРКТИКА</h1>
+  <p>
+    Загадочный мир льда, бескрайних снегов
+    и удивительной природы на севере нашей планеты.
+  </p>
+  <a class="button" href="#about">Исследовать Арктику ↓</a>
+  <a class="button" href="#quiz">🧠 Пройти квиз</a>
+</header>
+
+<section id="about">
+  <div class="intro">
+    <h2>Что такое Арктика?</h2>
+    <p>
+      Арктика — обширный полярный регион на севере Земли.
+      Она включает Северный Ледовитый океан, острова и северные
+      территории Евразии и Северной Америки. Здесь встречаются
+      низкие температуры, полярная ночь и северное сияние.
+    </p>
+  </div>
+</section>
+
+<section id="animals">
+  <h2>Жизнь среди льдов</h2>
+
+  <div class="grid">
+    <article class="card">
+      <img
+        src="https://images.unsplash.com/photo-1589656966895-2f33e7653819?auto=format&fit=crop&w=700&q=80"
+        alt="Белый медведь">
+      <div class="card-content">
+        <h3>Белый медведь</h3>
+        <p>
+          Крупный хищник Арктики. Он хорошо плавает,
+          а густой мех и слой жира помогают ему сохранять тепло.
+        </p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img
+        src="https://images.unsplash.com/photo-1551244072-5d12893278ab?auto=format&fit=crop&w=700&q=80"
+        alt="Морское животное">
+      <div class="card-content">
+        <h3>Моржи и тюлени</h3>
+        <p>
+          Эти морские млекопитающие приспособлены к холодной воде
+          и жизни среди льдов.
+        </p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img
+        src="https://images.unsplash.com/photo-1551986782-d0169b3f8fa7?auto=format&fit=crop&w=700&q=80"
+        alt="Полярная природа">
+      <div class="card-content">
+        <h3>Полярные птицы</h3>
+        <p>
+          Многие птицы прилетают в Арктику летом,
+          чтобы гнездиться и находить пищу.
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="facts" class="facts">
+  <h2>Арктика в цифрах</h2>
+
+  <div class="fact-grid">
+    <div class="fact">
+      <strong>66,5° с. ш.</strong>
+      <p>Примерная широта Северного полярного круга</p>
+    </div>
+
+    <div class="fact">
+      <strong>24 часа</strong>
+      <p>Летом в некоторых местах солнце не заходит</p>
+    </div>
+
+    <div class="fact">
+      <strong>8 стран</strong>
+      <p>Страны арктического региона</p>
+    </div>
+
+    <div class="fact">
+      <strong>Северный полюс</strong>
+      <p>Находится в Северном Ледовитом океане</p>
+    </div>
+  </div>
+</section>
+
+<section id="future" class="future">
+  <h2>Будущее Арктики</h2>
+  <p>
+    Арктика играет важную роль в климатической системе Земли.
+    Потепление приводит к сокращению морского льда и угрожает
+    привычной среде обитания животных. Научные исследования
+    и бережное отношение к природе помогают сохранить регион.
+  </p>
+  <a class="button" href="#quiz">Проверь свои знания →</a>
+</section>
+
+<!-- КВИЗ НАХОДИТСЯ ПРЯМО НА ЭТОЙ СТРАНИЦЕ -->
+<section id="quiz" class="quiz-section">
+  <div id="quizGame">
+    <h2>🧠 Квиз об Арктике</h2>
+    <p class="quiz-intro">
+      Ответь на 15 вопросов и узнай, насколько хорошо
+      ты знаешь Арктику.
+    </p>
+
+    <div class="quiz-top">
+      <span id="counter">Вопрос 1 из 15</span>
+      <span id="liveScore">Баллы: 0</span>
+    </div>
+
+    <div class="progress-track">
+      <div id="progress"></div>
+    </div>
+
+    <h3 id="question">Загрузка вопроса...</h3>
+    <div id="answers"></div>
+    <p id="feedback" aria-live="polite"></p>
+
+    <div class="quiz-controls">
+      <span id="status">Выбери один ответ</span>
+      <button id="nextButton" class="button" disabled>
+        Следующий вопрос →
+      </button>
+    </div>
+  </div>
+
+  <div id="result" class="hidden">
+    <h2>Квиз завершён!</h2>
+    <p>Твой результат:</p>
+    <div id="resultScore">0 из 15</div>
+    <p id="resultMessage"></p>
+    <button id="restartButton" class="button">
+      Пройти заново
+    </button>
+    <a class="button" href="#about">Вернуться к сайту</a>
+  </div>
+</section>
+
+<footer>
+  <p>Арктика — хрупкий мир, который необходимо сохранить.</p>
+  <p>Познавательный проект об Арктике · 2026</p>
+</footer>
+
+<script>
+"use strict";
+
+const questions = [
+  {
+    q: "Где находится Арктика?",
+    a: ["Вокруг Южного полюса", "Вокруг Северного полюса", "На экваторе", "Только в Европе"],
+    c: 1,
+    e: "Арктика — северный полярный регион Земли."
+  },
+  {
+    q: "Какой океан находится в центре Арктики?",
+    a: ["Атлантический", "Индийский", "Северный Ледовитый", "Тихий"],
+    c: 2,
+    e: "Центральную часть Арктики занимает Северный Ледовитый океан."
+  },
+  {
+    q: "Какое животное характерно для Арктики?",
+    a: ["Белый медведь", "Кенгуру", "Жираф", "Лев"],
+    c: 0,
+    e: "Белые медведи обитают в арктическом регионе."
+  },
+  {
+    q: "Что такое полярная ночь?",
+    a: ["Ночь с яркой луной", "Период, когда солнце не поднимается над горизонтом", "Затмение", "Обычная летняя ночь"],
+    c: 1,
+    e: "Во время полярной ночи солнце некоторое время не появляется над горизонтом."
+  },
+  {
+    q: "Как называется свечение неба возле полюсов?",
+    a: ["Радуга", "Северное сияние", "Мираж", "Солнечный зайчик"],
+    c: 1,
+    e: "Северное сияние возникает при взаимодействии частиц солнечного ветра с атмосферой."
+  },
+  {
+    q: "Какая из этих птиц встречается в северных морях?",
+    a: ["Страус", "Тупик", "Павлин", "Киви"],
+    c: 1,
+    e: "Тупик — морская птица северных широт. Пингвины в Арктике не живут."
+  },
+  {
+    q: "Что помогает белому медведю сохранять тепло?",
+    a: ["Большие уши", "Густой мех и слой жира", "Перья", "Тонкая кожа"],
+    c: 1,
+    e: "Мех и подкожный жир защищают медведя от холода."
+  },
+  {
+    q: "Как называется линия примерно на широте 66,5° с. ш.?",
+    a: ["Экватор", "Нулевой меридиан", "Северный полярный круг", "Тропик Козерога"],
+    c: 2,
+    e: "Северный полярный круг проходит примерно на широте 66,5° северной широты."
+  },
+  {
+    q: "У какого арктического животного есть длинные бивни?",
+    a: ["У моржа", "У бобра", "У тюленя", "У песца"],
+    c: 0,
+    e: "У моржей есть длинные бивни."
+  },
+  {
+    q: "Что происходит с морским льдом из-за потепления климата?",
+    a: ["Он всегда становится толще", "Его площадь и толщина сокращаются", "Он превращается в камень", "Ничего не меняется"],
+    c: 1,
+    e: "Потепление климата приводит к сокращению площади и толщины морского льда."
+  },
+  {
+    q: "Какая страна имеет арктические территории?",
+    a: ["Россия", "Бразилия", "Египет", "Индия"],
+    c: 0,
+    e: "Северные территории России входят в Арктику."
+  },
+  {
+    q: "Что такое полярный день?",
+    a: ["Когда солнце может не заходить за горизонт", "Когда солнце не восходит", "Затмение", "Самый короткий день везде на Земле"],
+    c: 0,
+    e: "Во время полярного дня солнце может оставаться над горизонтом круглые сутки."
+  },
+  {
+    q: "Чем в основном питаются белые медведи?",
+    a: ["Бамбуком", "Тюленями и другими морскими животными", "Только травой", "Орехами"],
+    c: 1,
+    e: "Основная добыча белых медведей — тюлени."
+  },
+  {
+    q: "Почему Арктика важна для планеты?",
+    a: ["Она влияет на климатическую систему Земли", "Там находится экватор", "Там нет льда", "Она не связана с климатом"],
+    c: 0,
+    e: "Арктика играет важную роль в климате Земли."
+  },
+  {
+    q: "Как лучше помочь сохранить природу Арктики?",
+    a: ["Оставлять мусор", "Беспокоить диких животных", "Сокращать загрязнение и охранять природу", "Забирать яйца птиц"],
+    c: 2,
+    e: "Снижение загрязнения и охрана природы помогают сохранить Арктику."
+  }
+];
+
+let current = 0;
+let score = 0;
+let answered = false;
+
+const questionEl = document.getElementById("question");
+const answersEl = document.getElementById("answers");
+const counterEl = document.getElementById("counter");
+const progressEl = document.getElementById("progress");
+const feedbackEl = document.getElementById("feedback");
+const nextButton = document.getElementById("nextButton");
+const liveScore = document.getElementById("liveScore");
+const statusEl = document.getElementById("status");
+const quizGame = document.getElementById("quizGame");
+const resultEl = document.getElementById("result");
+
+function showQuestion() {
+  answered = false;
+
+  const item = questions[current];
+
+  counterEl.textContent =
+    "Вопрос " + (current + 1) + " из " + questions.length;
+
+  questionEl.textContent = item.q;
+  progressEl.style.width =
+    (current / questions.length * 100) + "%";
+
+  feedbackEl.textContent = "";
+  statusEl.textContent = "Выбери один ответ";
+  nextButton.disabled = true;
+
+  nextButton.textContent =
+    current === questions.length - 1
+      ? "Узнать результат →"
+      : "Следующий вопрос →";
+
+  answersEl.replaceChildren();
+
+  item.a.forEach(function(answer, index) {
+    const button = document.createElement("button");
+
+    button.type = "button";
+    button.className = "answer";
+    button.textContent =
+      String.fromCharCode(65 + index) + ". " + answer;
+
+    button.addEventListener("click", function() {
+      chooseAnswer(index, button);
+    });
+
+    answersEl.appendChild(button);
+  });
+}
+
+function chooseAnswer(index, selectedButton) {
+  if (answered) return;
+
+  answered = true;
+
+  const item = questions[current];
+  const buttons = answersEl.querySelectorAll(".answer");
+
+  buttons.forEach(function(button, i) {
+    button.disabled = true;
+
+    if (i === item.c) {
+      button.classList.add("correct");
+    }
+  });
+
+  if (index === item.c) {
+    score++;
+    feedbackEl.textContent = "Верно! " + item.e;
+  } else {
+    selectedButton.classList.add("wrong");
+    feedbackEl.textContent = "Неверно. " + item.e;
+  }
+
+  liveScore.textContent = "Баллы: " + score;
+  progressEl.style.width =
+    ((current + 1) / questions.length * 100) + "%";
+
+  statusEl.textContent = "Ответ принят";
+  nextButton.disabled = false;
+}
+
+function showResult() {
+  quizGame.classList.add("hidden");
+  resultEl.classList.remove("hidden");
+
+  document.getElementById("resultScore").textContent =
+    score + " из " + questions.length;
+
+  let message;
+
+  if (score >= 13) {
+    message = "Отлично! Ты настоящий знаток Арктики!";
+  } else if (score >= 10) {
+    message = "Очень хороший результат! Ты много знаешь об Арктике.";
+  } else if (score >= 6) {
+    message = "Неплохо! Изучи сайт и попробуй ещё раз.";
+  } else {
+    message = "Это только начало! Попробуй пройти квиз ещё раз.";
+  }
+
+  document.getElementById("resultMessage").textContent = message;
+  progressEl.style.width = "100%";
+}
+
+nextButton.addEventListener("click", function() {
+  if (!answered) return;
+
+  current++;
+
+  if (current < questions.length) {
+    showQuestion();
+  } else {
+    showResult();
+  }
+});
+
+document.getElementById("restartButton").addEventListener("click", function() {
+  current = 0;
+  score = 0;
+
+  liveScore.textContent = "Баллы: 0";
+
+  resultEl.classList.add("hidden");
+  quizGame.classList.remove("hidden");
+
+  showQuestion();
+
+  document.getElementById("quiz").scrollIntoView({
+    behavior: "smooth"
+  });
+});
+
+showQuestion();
+</script>
+
+</body>
+</html>
