@@ -4,250 +4,202 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#071c2b">
-<title>Арктика — мир льда и жизни</title>
+<title>Арктика — мир вечного льда</title>
 <style>
 :root {
-  --bg: #071824;
-  --panel: #102b3d;
-  --panel2: #17394d;
-  --cyan: #70e1fa;
-  --text: #f1f8ff;
-  --muted: #b5cbd8;
+  --bg: #071522;
+  --panel: #102638;
+  --text: #edf8ff;
+  --muted: #b4c9d8;
+  --cyan: #76e5ff;
+  --line: #29465b;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.65;
 }
-a { color: inherit; }
+a { color: inherit; text-decoration: none; }
 header {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(5, 23, 35, .96);
-  border-bottom: 1px solid #24465a;
+  background: rgba(5,18,30,.94);
+  border-bottom: 1px solid var(--line);
   backdrop-filter: blur(12px);
 }
 .nav {
-  max-width: 1250px;
-  min-height: 76px;
+  max-width: 1180px;
   margin: auto;
-  padding: 12px 25px;
+  padding: 14px 22px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
 }
-.logo {
-  color: var(--cyan);
-  font-size: 24px;
-  font-weight: 900;
-  white-space: nowrap;
-}
-nav { display: flex; gap: 20px; flex-wrap: wrap; }
-nav a {
-  color: #e8f3fa;
-  text-decoration: none;
-  font-size: 14px;
-}
+.logo { font-size: 20px; font-weight: bold; color: var(--cyan); }
+nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: 14px; }
 nav a:hover { color: var(--cyan); }
-
 .hero {
-  min-height: 620px;
+  min-height: 540px;
   display: flex;
   align-items: center;
-  padding: 90px max(7%, calc((100% - 1150px)/2));
   background:
-    linear-gradient(90deg, rgba(3,19,30,.92), rgba(3,19,30,.58) 50%, rgba(3,19,30,.12)),
-    url("https://commons.wikimedia.org/wiki/Special:FilePath/White_polar_bear_on_snow_ursus_maritimus.jpg?width=1800")
-    center 45% / cover no-repeat;
+    linear-gradient(90deg, rgba(4,17,29,.96), rgba(4,17,29,.55)),
+    url("https://images.unsplash.com/photo-1517783999520-f068d7431a60?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
 }
-.hero-content { max-width: 720px; }
+.hero-content {
+  width: 1180px;
+  max-width: 100%;
+  margin: auto;
+  padding: 85px 24px;
+}
 .eyebrow {
   color: var(--cyan);
   text-transform: uppercase;
+  letter-spacing: 3px;
   font-size: 13px;
   font-weight: bold;
-  letter-spacing: 4px;
 }
-h1 {
-  font-size: clamp(43px, 7vw, 78px);
-  line-height: 1.08;
-  margin: 20px 0;
-  letter-spacing: -2px;
-}
-.hero p { font-size: 19px; max-width: 620px; color: #e3edf5; }
-.button {
+h1 { font-size: clamp(40px, 7vw, 76px); line-height: 1.08; margin: 16px 0; }
+.hero p { max-width: 650px; font-size: 18px; color: #d4e8f4; }
+.btn {
   display: inline-block;
   margin-top: 18px;
-  padding: 13px 22px;
-  border: 0;
-  border-radius: 8px;
+  padding: 12px 22px;
+  border-radius: 9px;
   background: var(--cyan);
-  color: #082234;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform .2s, background .2s;
-}
-.button:hover { transform: translateY(-2px); background: #a4efff; }
-section { padding: 75px 25px; }
-.container { max-width: 1150px; margin: auto; }
-.section-tag {
-  color: var(--cyan);
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 12px;
+  color: #061724;
   font-weight: bold;
 }
-h2 { font-size: clamp(30px, 4vw, 44px); line-height: 1.2; margin: 10px 0 18px; }
-h3 { line-height: 1.3; }
-.intro { max-width: 800px; color: var(--muted); font-size: 17px; }
+.btn:hover { filter: brightness(1.1); transform: translateY(-1px); }
+section { max-width: 1180px; margin: auto; padding: 65px 24px; }
+.section-head { max-width: 760px; margin-bottom: 28px; }
+h2 { font-size: clamp(28px, 4vw, 42px); line-height: 1.2; margin: 0 0 14px; }
+.section-head p, .muted { color: var(--muted); }
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-  margin-top: 32px;
+  gap: 14px;
+  margin-top: -35px;
+  position: relative;
 }
 .stat {
-  padding: 23px;
-  border-radius: 12px;
-  background: var(--panel);
-  border: 1px solid #23475b;
+  background: #102638;
+  border: 1px solid var(--line);
+  padding: 22px;
+  border-radius: 14px;
 }
-.stat strong { display: block; color: var(--cyan); font-size: 28px; }
+.stat strong { display: block; font-size: 27px; color: var(--cyan); }
 .stat span { color: var(--muted); font-size: 14px; }
-.alt { background: #0b2232; }
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-  margin-top: 32px;
-}
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .card {
-  min-width: 0;
-  overflow: hidden;
   background: var(--panel);
-  border: 1px solid #234458;
+  border: 1px solid var(--line);
   border-radius: 15px;
+  overflow: hidden;
   transition: transform .2s, border-color .2s;
 }
 .card:hover { transform: translateY(-4px); border-color: var(--cyan); }
 .card img {
-  display: block;
   width: 100%;
-  height: 230px;
+  height: 210px;
   object-fit: cover;
-  background: #1c4054;
+  display: block;
+  background: #19364b;
 }
-.card-body { padding: 21px; }
-.card h3 { margin: 0 0 9px; font-size: 22px; }
-.card p { color: var(--muted); margin: 0; font-size: 15px; }
-.pill {
+.card-body { padding: 20px; }
+.card h3 { margin: 0 0 8px; font-size: 21px; }
+.card p { color: var(--muted); margin: 0; }
+.tag {
   display: inline-block;
   margin-bottom: 10px;
-  padding: 4px 9px;
-  background: #1c475d;
   color: var(--cyan);
-  border-radius: 20px;
   font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
-.notice { color: var(--muted); font-size: 13px; margin-top: 20px; }
-
-.timeline { margin-top: 35px; display: grid; gap: 18px; }
-.event {
-  display: grid;
-  grid-template-columns: 135px 1fr;
-  gap: 25px;
-  padding: 25px;
-  background: var(--panel);
-  border: 1px solid #234458;
-  border-radius: 13px;
+.history { border-left: 2px solid #31566b; margin-left: 8px; padding-left: 25px; }
+.event { position: relative; padding: 0 0 28px; }
+.event::before {
+  content: "";
+  position: absolute;
+  left: -33px;
+  top: 7px;
+  width: 12px;
+  height: 12px;
+  background: var(--cyan);
+  border-radius: 50%;
 }
-.year { color: var(--cyan); font-size: 22px; font-weight: bold; }
-.event h3 { margin: 0 0 7px; font-size: 21px; }
+.year { color: var(--cyan); font-weight: bold; font-size: 18px; }
+.event h3 { margin: 4px 0; }
 .event p { color: var(--muted); margin: 0; }
-
-.fact-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-  margin-top: 30px;
-}
-.fact {
+.feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.feature {
+  padding: 22px;
   background: var(--panel);
-  border: 1px solid #234458;
-  border-radius: 13px;
-  padding: 23px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
 }
-.fact h3 { margin: 0 0 8px; color: var(--cyan); }
-.fact p { color: var(--muted); margin: 0; }
-
-.quiz-wrap {
-  max-width: 850px;
-  margin: 30px auto 0;
-  padding: 30px;
-  background: var(--panel);
-  border: 1px solid #2a5269;
+.feature h3 { margin: 0 0 7px; }
+.feature p { margin: 0; color: var(--muted); }
+.quiz {
+  background: linear-gradient(135deg, #102d42, #0c2032);
+  border: 1px solid #31566b;
   border-radius: 18px;
+  padding: clamp(20px, 4vw, 38px);
 }
-.quiz-top { display: flex; justify-content: space-between; gap: 10px; color: var(--muted); }
-.progress { height: 7px; background: #284759; border-radius: 10px; margin: 18px 0 25px; overflow: hidden; }
-.progress-bar { height: 100%; width: 0; background: var(--cyan); transition: width .25s; }
-#question { font-size: 24px; margin: 0 0 22px; }
-.answers { display: grid; gap: 12px; }
+.progress-track { background: #243f53; height: 7px; border-radius: 10px; overflow: hidden; margin: 18px 0 25px; }
+.progress-bar { height: 100%; width: 0; background: var(--cyan); transition: width .2s; }
+.answers { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 20px 0; }
 .answer {
-  width: 100%;
-  padding: 15px 17px;
-  border-radius: 9px;
-  border: 1px solid #35576a;
-  background: #16374b;
-  color: var(--text);
   text-align: left;
-  font-size: 16px;
+  background: #132e43;
+  color: var(--text);
+  border: 1px solid #35536a;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 15px;
   cursor: pointer;
 }
-.answer:hover:not(:disabled) { border-color: var(--cyan); background: #1b455b; }
-.answer:disabled { cursor: default; opacity: .95; }
-.answer.correct { border-color: #5cdb9b; background: #154a40; }
-.answer.wrong { border-color: #ff8e8e; background: #502d38; }
-#explanation { min-height: 50px; color: var(--muted); margin-top: 18px; }
-.quiz-actions { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
-#nextButton { display: none; }
-#result { text-align: center; }
-#result h3 { font-size: 30px; }
-#result strong { color: var(--cyan); font-size: 48px; display: block; }
-.hidden { display: none !important; }
-
+.answer:hover:not(:disabled) { border-color: var(--cyan); }
+.answer:disabled { cursor: default; opacity: .85; }
+.answer.correct { background: #164735; border-color: #56d69a; }
+.answer.wrong { background: #502b34; border-color: #ff8797; }
+#feedback { min-height: 28px; color: var(--muted); }
+.quiz-controls { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+button.primary {
+  background: var(--cyan);
+  color: #061724;
+  border: 0;
+  padding: 12px 20px;
+  border-radius: 9px;
+  font-weight: bold;
+  cursor: pointer;
+}
+button.primary:disabled { opacity: .4; cursor: not-allowed; }
 footer {
-  padding: 32px 20px;
-  border-top: 1px solid #234458;
+  border-top: 1px solid var(--line);
+  padding: 28px 20px;
   text-align: center;
   color: var(--muted);
-  font-size: 13px;
 }
-footer a { color: var(--cyan); }
-
-@media(max-width: 850px) {
-  .nav { align-items: flex-start; flex-direction: column; }
-  nav { gap: 13px; }
-  .hero { min-height: 570px; padding: 75px 25px; }
-  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media(max-width:800px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
   .stats { grid-template-columns: repeat(2, 1fr); }
+  nav { gap: 10px; }
 }
-@media(max-width: 560px) {
-  .cards, .fact-grid, .stats { grid-template-columns: 1fr; }
-  .event { grid-template-columns: 1fr; gap: 5px; }
-  .quiz-wrap { padding: 20px; }
-  #question { font-size: 21px; }
-  .card img { height: 220px; }
+@media(max-width:540px) {
+  .nav { align-items: flex-start; flex-direction: column; }
+  .grid, .feature-grid, .answers { grid-template-columns: 1fr; }
+  .hero { min-height: 480px; }
+  section { padding: 48px 18px; }
+  .card img { height: 230px; }
 }
 </style>
 </head>
@@ -255,9 +207,9 @@ footer a { color: var(--cyan); }
 
 <header>
   <div class="nav">
-    <div class="logo">❄ АРКТИКА</div>
+    <a class="logo" href="#home">❄ АРКТИКА</a>
     <nav>
-      <a href="#about">Об Арктике</a>
+      <a href="#about">О регионе</a>
       <a href="#animals">Животные</a>
       <a href="#history">История</a>
       <a href="#facts">Факты</a>
@@ -267,466 +219,381 @@ footer a { color: var(--cyan); }
 </header>
 
 <main>
-  <section class="hero">
+  <div class="hero" id="home">
     <div class="hero-content">
-      <div class="eyebrow">Мир на краю Земли</div>
-      <h1>Арктика — мир льда и жизни</h1>
+      <div class="eyebrow">Северная природа • История • Наука</div>
+      <h1>Арктика —<br>мир вечного льда</h1>
       <p>
-        Ледяные пустыни, северное сияние и удивительные животные.
-        Узнай, как люди исследовали Арктику, кто обитает среди льдов
-        и почему этот регион так важен для всей планеты.
+        Край полярных ночей, ледяных морей и удивительных животных.
+        Узнай, как люди исследовали Арктику и почему её будущее важно для всей планеты.
       </p>
-      <a class="button" href="#about">Начать исследование ↓</a>
+      <a class="btn" href="#about">Начать путешествие ↓</a>
     </div>
-  </section>
+  </div>
 
   <section id="about">
-    <div class="container">
-      <div class="section-tag">Знакомство с севером</div>
+    <div class="stats">
+      <div class="stat"><strong>≈ 14 млн км²</strong><span>площадь Северного Ледовитого океана</span></div>
+      <div class="stat"><strong>6 месяцев</strong><span>может длиться полярный день у полюса</span></div>
+      <div class="stat"><strong>8 стран</strong><span>имеют территории за Полярным кругом</span></div>
+      <div class="stat"><strong>−50 °C</strong><span>и ниже бывает зимой в некоторых районах</span></div>
+    </div>
+
+    <div class="section-head" style="margin-top:55px">
+      <div class="eyebrow">Знакомство с регионом</div>
       <h2>Что такое Арктика?</h2>
-      <p class="intro">
+      <p>
         Арктика — северная полярная область Земли. В неё входят Северный
-        Ледовитый океан, острова и северные окраины Евразии и Северной Америки.
-        Здесь встречаются многолетние льды, тундра и суровый климат.
-        Несмотря на холод, в Арктике существует удивительно разнообразная жизнь.
+        Ледовитый океан, острова и северные окраины материков Евразии и Северной Америки.
+        Здесь суровый климат, вечная мерзлота и уникальные экосистемы.
       </p>
-      <div class="stats">
-        <div class="stat"><strong>Север</strong><span>Полярная область Земли</span></div>
-        <div class="stat"><strong>Океан</strong><span>В центре Арктики</span></div>
-        <div class="stat"><strong>Тундра</strong><span>Мир мхов, лишайников и кустарников</span></div>
-        <div class="stat"><strong>Сияние</strong><span>Одно из чудес полярного неба</span></div>
-      </div>
+    </div>
+    <div class="feature-grid">
+      <article class="feature">
+        <h3>🌞 Полярный день</h3>
+        <p>Летом Солнце в некоторых районах не заходит за горизонт в течение суток и дольше.</p>
+      </article>
+      <article class="feature">
+        <h3>🌌 Полярная ночь</h3>
+        <p>Зимой Солнце может долго не подниматься над горизонтом. Но не везде ночь длится одинаково.</p>
+      </article>
+      <article class="feature">
+        <h3>🧊 Ледяные моря</h3>
+        <p>Большую часть Северного Ледовитого океана зимой покрывает морской лёд.</p>
+      </article>
+      <article class="feature">
+        <h3>🌿 Хрупкая природа</h3>
+        <p>Многие растения и животные приспособлены к холоду, но экосистемы чувствительны к изменениям климата.</p>
+      </article>
     </div>
   </section>
 
-  <section id="animals" class="alt">
-    <div class="container">
-      <div class="section-tag">Обитатели севера</div>
+  <section id="animals">
+    <div class="section-head">
+      <div class="eyebrow">Живой север</div>
       <h2>Животные Арктики</h2>
-      <p class="intro">
-        У животных Арктики есть особые приспособления к холоду: густой мех,
-        слой жира, сезонная смена окраски и способность находить пищу в сложных условиях.
-      </p>
-
-      <div class="cards">
-        <article class="card">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/White_polar_bear_on_snow_ursus_maritimus.jpg?width=900"
-               alt="Белый медведь в снегу" loading="lazy">
-          <div class="card-body">
-            <span class="pill">Хищник</span>
-            <h3>Белый медведь</h3>
-            <p>Крупный хищник, отлично приспособленный к холоду. Он хорошо плавает и охотится преимущественно на тюленей, используя морской лёд.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Arctic_fox_in_summer.jpg?width=900"
-               alt="Песец" loading="lazy">
-          <div class="card-body">
-            <span class="pill">Маленький хищник</span>
-            <h3>Песец</h3>
-            <p>У песца очень тёплый мех. Многие песцы зимой становятся белыми, а летом их окраска может быть серовато-бурой.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Walrus_2.jpg?width=900"
-               alt="Морж" loading="lazy">
-          <div class="card-body">
-            <span class="pill">Морское млекопитающее</span>
-            <h3>Морж</h3>
-            <p>Моржа легко узнать по длинным бивням и усам. Он питается главным образом донными беспозвоночными и отдыхает на льду или берегу.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rangifer_tarandus_2001-07-16.jpg?width=900"
-               alt="Северный олень" loading="lazy">
-          <div class="card-body">
-            <span class="pill">Травоядное</span>
-            <h3>Северный олень</h3>
-            <p>Северные олени питаются растениями, в том числе лишайниками. Их широкие копыта помогают передвигаться по снегу и рыхлой земле.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bubo_scandiacus.jpg?width=900"
-               alt="Белая полярная сова" loading="lazy">
-          <div class="card-body">
-            <span class="pill">Птица</span>
-            <h3>Полярная сова</h3>
-            <p>Эта крупная сова живёт в открытых северных пространствах. Она охотится на леммингов и других небольших животных.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Monodon_monoceros.jpg?width=900"
-               alt="Нарвал" loading="lazy">
-          <div class="card-body">
-            <span class="pill">Морское млекопитающее</span>
-            <h3>Нарвал</h3>
-            <p>Нарвал — родственник белухи. У многих самцов есть длинный спиральный бивень, который на самом деле является удлинённым зубом.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Phoca_hispida.jpg?width=900"
-               alt="Кольчатая нерпа" loading="lazy">
-          <div class="card-body">
-            <span class="pill">Обитатель моря</span>
-            <h3>Нерпа</h3>
-            <p>Кольчатая нерпа живёт в арктических морях. Она использует дыхательные отверстия во льду, чтобы подниматься за воздухом.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lemming.jpg?width=900"
-               alt="Лемминг" loading="lazy">
-          <div class="card-body">
-            <span class="pill">Небольшой грызун</span>
-            <h3>Лемминг</h3>
-            <p>Лемминги питаются растениями и служат важной частью пищевых цепей. От их численности зависит жизнь многих северных хищников.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Beluga_whale.jpg?width=900"
-               alt="Белуха" loading="lazy">
-          <div class="card-body">
-            <span class="pill">Морское млекопитающее</span>
-            <h3>Белуха</h3>
-            <p>Белуха известна белой окраской и разнообразными звуками. Она живёт в холодных северных морях и часто держится группами.</p>
-          </div>
-        </article>
-      </div>
-      <p class="notice">Фотографии загружаются с Wikimedia Commons. Если снимок не отображается, проверь доступ к внешним сайтам или используй локальные файлы.</p>
+      <p>У каждого обитателя Севера есть свои способы выживания в условиях холода, ветра и долгой зимы.</p>
     </div>
+
+    <div class="grid">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1516934024742-b461fba47600?auto=format&fit=crop&w=900&q=80" alt="Белый медведь" loading="lazy">
+        <div class="card-body"><span class="tag">Хищник</span><h3>Белый медведь</h3><p>Крупный хищник Арктики. Отлично плавает и охотится главным образом на тюленей у кромки льда.</p></div>
+      </article>
+      <article class="card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Arctic_fox.jpg" alt="Песец" loading="lazy">
+        <div class="card-body"><span class="tag">Млекопитающее</span><h3>Песец</h3><p>Небольшой хищник с густым мехом. Зимой его шерсть у многих особей становится белой.</p></div>
+      </article>
+      <article class="card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Walrus.jpg" alt="Морж" loading="lazy">
+        <div class="card-body"><span class="tag">Морское млекопитающее</span><h3>Морж</h3><p>Узнаваем по длинным бивням и чувствительным усам. Часто питается моллюсками на морском дне.</p></div>
+      </article>
+      <article class="card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rangifer_tarandus.jpg" alt="Северный олень" loading="lazy">
+        <div class="card-body"><span class="tag">Травоядное</span><h3>Северный олень</h3><p>Имеет широкие копыта для передвижения по снегу и умеет находить под снегом лишайники.</p></div>
+      </article>
+      <article class="card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bubo_scandiacus.jpg" alt="Белая сова" loading="lazy">
+        <div class="card-body"><span class="tag">Птица</span><h3>Белая сова</h3><p>Крупная северная птица. Её густое оперение помогает сохранять тепло, а основной добычей часто становятся лемминги.</p></div>
+      </article>
+      <article class="card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pod_Monodon_monoceros.jpg" alt="Нарвал" loading="lazy">
+        <div class="card-body"><span class="tag">Морское млекопитающее</span><h3>Нарвал</h3><p>Обитает в холодных водах. У самцов обычно есть длинный спиральный бивень — удлинённый зуб.</p></div>
+      </article>
+      <article class="card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Beluga_whale.jpg" alt="Белуха" loading="lazy">
+        <div class="card-body"><span class="tag">Морское млекопитающее</span><h3>Белуха</h3><p>Белый зубатый кит, который издаёт множество звуков и живёт в холодных северных морях.</p></div>
+      </article>
+      <article class="card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Phoca_hispida.jpg" alt="Кольчатая нерпа" loading="lazy">
+        <div class="card-body"><span class="tag">Морское млекопитающее</span><h3>Кольчатая нерпа</h3><p>Небольшой тюлень, приспособленный к жизни среди льдов. Важная часть питания белого медведя.</p></div>
+      </article>
+      <article class="card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lemmus_lemmus.jpg" alt="Лемминг" loading="lazy">
+        <div class="card-body"><span class="tag">Грызун</span><h3>Лемминг</h3><p>Маленький грызун тундры. Его численность меняется по годам, а сам он служит пищей многим хищникам.</p></div>
+      </article>
+    </div>
+    <p class="muted" style="font-size:13px;margin-top:18px">
+      Примечание: изображения загружаются с внешних сайтов. Если отдельное фото не отображается, проверь подключение к интернету или замени ссылку на файл, загруженный в репозиторий.
+    </p>
   </section>
 
   <section id="history">
-    <div class="container">
-      <div class="section-tag">Путь через льды</div>
+    <div class="section-head">
+      <div class="eyebrow">Путь исследователей</div>
       <h2>История освоения Арктики</h2>
-      <p class="intro">
-        Арктика не была пустой землёй: коренные народы жили здесь задолго до
-        появления европейских экспедиций. Позже исследователи составляли карты,
-        искали морские пути и изучали природу полярных областей.
-      </p>
+      <p>Арктику изучали мореплаватели, учёные, картографы и полярные экспедиции. Каждый этап расширял знания о северных морях.</p>
+    </div>
 
-      <div class="timeline">
-        <article class="event">
-          <div class="year">Древность</div>
-          <div>
-            <h3>Жизнь коренных народов</h3>
-            <p>Инуиты, саамы, ненцы, чукчи и другие народы веками приспосабливались к северному климату. Они развивали охоту, рыболовство, оленеводство и собственные знания о природе, льдах и сезонных изменениях.</p>
-          </div>
-        </article>
-        <article class="event">
-          <div class="year">IX–XII века</div>
-          <div>
-            <h3>Путешествия северных мореходов</h3>
-            <p>Скандинавские мореходы исследовали северные моря и заселяли отдельные острова. Их плавания расширяли знания европейцев о северной Атлантике.</p>
-          </div>
-        </article>
-        <article class="event">
-          <div class="year">XVI–XVII века</div>
-          <div>
-            <h3>Поиск морских путей</h3>
-            <p>Мореплаватели искали пути из Европы в Азию через северные моря. Русские землепроходцы и поморы исследовали побережье Сибири, острова и устья северных рек.</p>
-          </div>
-        </article>
-        <article class="event">
-          <div class="year">1733–1743</div>
-          <div>
-            <h3>Великая Северная экспедиция</h3>
-            <p>Масштабная экспедиция Российской империи изучала северные берега Сибири и Дальнего Востока. Её участники описывали побережья, собирали научные сведения и уточняли географические карты.</p>
-          </div>
-        </article>
-        <article class="event">
-          <div class="year">XIX век</div>
-          <div>
-            <h3>Новые экспедиции и научные наблюдения</h3>
-            <p>Исследователи продолжали изучать острова, ледовые условия и течения. Полярные путешествия часто сопровождались большими трудностями из-за холода, штормов и дрейфующего льда.</p>
-          </div>
-        </article>
-        <article class="event">
-          <div class="year">1909–1926</div>
-          <div>
-            <h3>Достижение полюса и перелёты</h3>
-            <p>В начале XX века несколько экспедиций заявили о достижении Северного полюса. В 1926 году экспедиция Руаля Амундсена, Линкольна Эллсворта и Умберто Нобиле пролетела над полюсом на дирижабле «Норвегия».</p>
-          </div>
-        </article>
-        <article class="event">
-          <div class="year">1930-е годы</div>
-          <div>
-            <h3>Развитие полярных станций</h3>
-            <p>Научные станции стали регулярно наблюдать за погодой, льдами и атмосферой. В 1937 году в СССР начала работу дрейфующая станция «Северный полюс-1» под руководством Ивана Папанина.</p>
-          </div>
-        </article>
-        <article class="event">
-          <div class="year">Вторая половина XX века</div>
-          <div>
-            <h3>Наука и освоение региона</h3>
-            <p>Развивались ледокольный флот, авиация, метеорология и океанология. Учёные получили новые сведения о морском льде, климате, животных и природных ресурсах Арктики.</p>
-          </div>
-        </article>
-        <article class="event">
-          <div class="year">XXI век</div>
-          <div>
-            <h3>Арктика сегодня</h3>
-            <p>Современные спутники, автоматические станции и научные суда помогают наблюдать за изменением климата. Одновременно растёт значение защиты экосистем, традиционного образа жизни коренных народов и безопасного судоходства.</p>
-          </div>
-        </article>
-      </div>
+    <div class="history">
+      <article class="event">
+        <div class="year">IX–XI века</div>
+        <h3>Путешествия северных мореплавателей</h3>
+        <p>Скандинавские мореходы исследовали северные моря, достигли Исландии и Гренландии. Их путешествия расширили представления европейцев о далёком Севере.</p>
+      </article>
+      <article class="event">
+        <div class="year">XVI–XVII века</div>
+        <h3>Поиск северных морских путей</h3>
+        <p>Европейские государства искали более короткие торговые маршруты в Азию. Экспедиции изучали северные побережья и острова, сталкиваясь с тяжёлыми льдами.</p>
+      </article>
+      <article class="event">
+        <div class="year">1648 год</div>
+        <h3>Экспедиция Семёна Дежнёва</h3>
+        <p>Экспедиция прошла морем вокруг Чукотского полуострова и доказала возможность плавания между Азией и Америкой через пролив.</p>
+      </article>
+      <article class="event">
+        <div class="year">1733–1743 годы</div>
+        <h3>Великая Северная экспедиция</h3>
+        <p>Масштабное исследование северных берегов России. Участники описывали побережья, наносили их на карты и собирали научные сведения.</p>
+      </article>
+      <article class="event">
+        <div class="year">1878–1879 годы</div>
+        <h3>Плавание Адольфа Норденшельда</h3>
+        <p>Экспедиция на судне «Вега» впервые прошла весь Северо-Восточный проход одним плаванием, зимовав у Чукотки.</p>
+      </article>
+      <article class="event">
+        <div class="year">1932 год</div>
+        <h3>Развитие Северного морского пути</h3>
+        <p>Ледокольный пароход «Александр Сибиряков» прошёл Северный морской путь за одну навигацию. Это стало важным шагом в развитии арктического судоходства.</p>
+      </article>
+      <article class="event">
+        <div class="year">1937 год</div>
+        <h3>Станция «Северный полюс-1»</h3>
+        <p>Советская экспедиция под руководством Ивана Папанина начала работу первой дрейфующей научной станции на льдине в районе Северного полюса.</p>
+      </article>
+      <article class="event">
+        <div class="year">1957 год</div>
+        <h3>Атомный ледокольный флот</h3>
+        <p>В СССР начали строить атомный ледокол «Ленин», введённый в эксплуатацию в 1959 году. Атомные ледоколы помогли развивать круглогодичную навигацию в Арктике.</p>
+      </article>
+      <article class="event">
+        <div class="year">XXI век</div>
+        <h3>Современные исследования</h3>
+        <p>Учёные используют спутники, автоматические станции, подводные аппараты и ледоколы, чтобы наблюдать за климатом, льдами и морскими экосистемами.</p>
+      </article>
     </div>
   </section>
 
-  <section id="facts" class="alt">
-    <div class="container">
-      <div class="section-tag">Знаешь ли ты?</div>
-      <h2>Интересные факты об Арктике</h2>
-      <div class="fact-grid">
-        <article class="fact">
-          <h3>🌌 Северное сияние</h3>
-          <p>Оно возникает, когда заряженные частицы взаимодействуют с газами в верхних слоях атмосферы. Свет может быть зелёным, красным, фиолетовым и других оттенков.</p>
-        </article>
-        <article class="fact">
-          <h3>🌞 Полярный день</h3>
-          <p>Летом за Полярным кругом в некоторых местах Солнце не заходит за горизонт в течение суток и дольше. Зимой бывает полярная ночь.</p>
-        </article>
-        <article class="fact">
-          <h3>🧊 Морской лёд</h3>
-          <p>Морской лёд образуется при замерзании солёной воды. Он важен для многих животных и влияет на обмен теплом между океаном и атмосферой.</p>
-        </article>
-        <article class="fact">
-          <h3>🌡️ Изменение климата</h3>
-          <p>Арктика нагревается особенно быстро. Сокращение морского льда меняет среду обитания животных и условия жизни людей.</p>
-        </article>
-        <article class="fact">
-          <h3>🌱 Растения тундры</h3>
-          <p>Из-за короткого лета многие растения невысокие. Здесь встречаются мхи, лишайники, травы и небольшие кустарники.</p>
-        </article>
-        <article class="fact">
-          <h3>🧭 Северный полюс</h3>
-          <p>Географический Северный полюс находится в Северном Ледовитом океане. В отличие от Южного полюса, он не расположен на континенте.</p>
-        </article>
-      </div>
+  <section id="facts">
+    <div class="section-head">
+      <div class="eyebrow">Удивительный север</div>
+      <h2>Интересные факты</h2>
+      <p>Арктика не просто холодная пустыня. Это сложная природная система, которая влияет на климат всей Земли.</p>
+    </div>
+    <div class="feature-grid">
+      <article class="feature"><h3>🧭 Географический полюс</h3><p>Северный полюс находится в Северном Ледовитом океане, а не на материке.</p></article>
+      <article class="feature"><h3>🐻‍❄️ Белые медведи и пингвины</h3><p>В природе белые медведи живут в Арктике, а дикие пингвины — в Южном полушарии. Они не встречаются в естественной среде.</p></article>
+      <article class="feature"><h3>🌊 Влияние на климат</h3><p>Снег и лёд отражают солнечный свет. Когда площадь льда уменьшается, океан поглощает больше энергии.</p></article>
+      <article class="feature"><h3>🌱 Растения тундры</h3><p>Мхи, лишайники, травы и карликовые кустарники растут там, где короткое лето и холодная почва.</p></article>
+      <article class="feature"><h3>🌈 Северное сияние</h3><p>Оно возникает, когда заряженные частицы взаимодействуют с газами в верхних слоях атмосферы.</p></article>
+      <article class="feature"><h3>🧊 Лёд меняется</h3><p>Морской лёд ежегодно растёт зимой и тает летом, а его площадь и толщина меняются от года к году.</p></article>
     </div>
   </section>
 
   <section id="quiz">
-    <div class="container">
-      <div class="section-tag">Проверь свои знания</div>
+    <div class="section-head">
+      <div class="eyebrow">Проверь себя</div>
       <h2>Викторина об Арктике</h2>
-      <p class="intro">12 вопросов о животных, природе и истории. Выбери один ответ и узнай свой результат в конце.</p>
+      <p>12 вопросов о природе, животных и истории Севера. Выбери ответ и узнай свой результат в конце.</p>
+    </div>
 
-      <div class="quiz-wrap">
-        <div id="quizGame">
-          <div class="quiz-top">
-            <span id="questionCounter">Вопрос 1 из 12</span>
-            <span id="scoreCounter">Баллы: 0</span>
-          </div>
-          <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
-          <h3 id="question"></h3>
-          <div class="answers" id="answers"></div>
-          <div id="explanation" aria-live="polite"></div>
-          <div class="quiz-actions">
-            <span id="feedback"></span>
-            <button class="button" id="nextButton" type="button">Следующий вопрос →</button>
-          </div>
-        </div>
-        <div id="result" class="hidden">
-          <div class="section-tag">Результат</div>
-          <h3>Викторина завершена!</h3>
-          <strong id="finalScore"></strong>
-          <p id="resultText"></p>
-          <button class="button" id="restartButton" type="button">Пройти ещё раз ↻</button>
-        </div>
+    <div class="quiz">
+      <div id="quiz-status">Вопрос 1 из 12</div>
+      <div class="progress-track"><div class="progress-bar" id="progress"></div></div>
+      <h3 id="question">Где находится Северный полюс?</h3>
+      <div class="answers" id="answers"></div>
+      <div id="feedback" aria-live="polite"></div>
+      <div class="quiz-controls">
+        <span id="score">Правильных ответов: 0</span>
+        <button class="primary" id="next" disabled>Следующий вопрос →</button>
       </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <p>❄ АРКТИКА — МИР ЛЬДА И ЖИЗНИ</p>
-  <p>Учебный познавательный проект о природе, истории и животных Арктики.</p>
-  <p>Фотографии: <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>.</p>
+  <p>❄ Арктика — мир вечного льда</p>
+  <p>Учебный проект о природе, истории и исследовании Арктики.</p>
 </footer>
 
 <script>
 const questions = [
   {
-    q: "1. Что находится в центре Арктики?",
-    a: ["Атлантический океан", "Северный Ледовитый океан", "Антарктида", "Пустыня Сахара"],
-    correct: 1,
-    info: "Арктика включает Северный Ледовитый океан, острова и северные окраины материков."
+    q: "Где находится Северный полюс?",
+    a: ["В Северном Ледовитом океане", "В Антарктиде", "В Африке", "В Тихом океане"],
+    c: 0,
+    e: "Северный полюс находится в Северном Ледовитом океане."
   },
   {
-    q: "2. Какое животное является крупным хищником Арктики?",
-    a: ["Коала", "Лев", "Белый медведь", "Панда"],
-    correct: 2,
-    info: "Белый медведь приспособлен к жизни среди льдов и хорошо плавает."
+    q: "Какое животное обитает в Арктике?",
+    a: ["Императорский пингвин", "Белый медведь", "Коала", "Лев"],
+    c: 1,
+    e: "Белые медведи живут в Арктике. Пингвины в природе обитают в Южном полушарии."
   },
   {
-    q: "3. Чем в основном питается белый медведь?",
-    a: ["Бамбуком", "Тюленями", "Только ягодами", "Морской травой"],
-    correct: 1,
-    info: "Белый медведь охотится преимущественно на тюленей, используя морской лёд."
+    q: "Чем в основном питается белый медведь?",
+    a: ["Бамбуком", "Травой", "Тюленями", "Плодами"],
+    c: 2,
+    e: "Белые медведи охотятся прежде всего на тюленей."
   },
   {
-    q: "4. Как называется небольшое северное животное, мех которого зимой часто белеет?",
-    a: ["Песец", "Верблюд", "Тигр", "Бобр"],
-    correct: 0,
-    info: "У многих песцов шерсть меняет окраску в зависимости от сезона."
+    q: "Как называется период, когда Солнце долго не заходит за горизонт?",
+    a: ["Полярный день", "Полярная ночь", "Затмение", "Рассвет"],
+    c: 0,
+    e: "Во время полярного дня Солнце не заходит за горизонт."
   },
   {
-    q: "5. Какой народ веками живёт в арктических регионах Северной Америки и Гренландии?",
-    a: ["Маори", "Инуиты", "Аборигены Австралии", "Майя"],
-    correct: 1,
-    info: "Инуиты обладают богатой культурой и традиционными знаниями о северной природе."
+    q: "Какой исследователь связан с экспедицией 1648 года вокруг Чукотки?",
+    a: ["Юрий Гагарин", "Семён Дежнёв", "Михаил Ломоносов", "Фернан Магеллан"],
+    c: 1,
+    e: "Экспедиция Семёна Дежнёва прошла морем вокруг Чукотского полуострова."
   },
   {
-    q: "6. Когда проходила Великая Северная экспедиция?",
-    a: ["1733–1743 годы", "1812–1813 годы", "1941–1945 годы", "2000–2005 годы"],
-    correct: 0,
-    info: "Экспедиция 1733–1743 годов изучала северные берега Сибири и Дальнего Востока."
+    q: "Как называется небольшая северная лисица?",
+    a: ["Фенек", "Песец", "Шакал", "Рысь"],
+    c: 1,
+    e: "Песец приспособлен к суровому климату и имеет очень густой мех."
   },
   {
-    q: "7. Как называлась дрейфующая полярная станция, открытая в СССР в 1937 году?",
-    a: ["Восток-1", "Северный полюс-1", "Мир-1", "Арктика-2000"],
-    correct: 1,
-    info: "Станция «Северный полюс-1» начала работу в 1937 году под руководством Ивана Папанина."
+    q: "Какое судно помогает проходить сквозь толстый лёд?",
+    a: ["Парусник", "Катамаран", "Ледокол", "Рыбацкая лодка"],
+    c: 2,
+    e: "Ледокол прокладывает путь через лёд для себя и других судов."
   },
   {
-    q: "8. Что такое полярный день?",
-    a: ["День без облаков", "Сутки, когда Солнце не заходит за горизонт", "Самый холодный день года", "День без ветра"],
-    correct: 1,
-    info: "Во время полярного дня Солнце остаётся над горизонтом не менее 24 часов."
+    q: "Как называется белый зубатый кит Арктики?",
+    a: ["Белуха", "Дельфин афалина", "Кашалот", "Косатка"],
+    c: 0,
+    e: "Белуха — северный кит белого цвета."
   },
   {
-    q: "9. Как возникает северное сияние?",
-    a: ["Из-за отражения городских огней", "Из-за вулканической лавы", "При взаимодействии заряженных частиц с атмосферой", "Из-за морской пены"],
-    correct: 2,
-    info: "Заряженные частицы взаимодействуют с газами в верхних слоях атмосферы, создавая свечение."
+    q: "Что такое тундра?",
+    a: ["Тропический лес", "Природная зона без высоких деревьев", "Пустыня с пальмами", "Горная река"],
+    c: 1,
+    e: "В тундре преобладают мхи, лишайники, травы и низкие кустарники."
   },
   {
-    q: "10. Какое животное известно длинным спиральным бивнем-зубом?",
-    a: ["Нарвал", "Лемминг", "Полярная сова", "Северный олень"],
-    correct: 0,
-    info: "Знаменитый бивень нарвала — это удлинённый зуб, обычно растущий у самцов."
+    q: "Почему белый лёд важен для климата?",
+    a: ["Он создаёт ветер", "Он отражает солнечный свет", "Он нагревает океан сильнее воды", "Он останавливает все течения"],
+    c: 1,
+    e: "Светлая поверхность льда отражает значительную часть солнечной энергии."
   },
   {
-    q: "11. Почему морской лёд важен для белых медведей?",
-    a: ["На нём растут пальмы", "Он помогает им охотиться на тюленей", "Он даёт им пресную воду для дыхания", "Он заменяет мех"],
-    correct: 1,
-    info: "Морской лёд служит платформой для охоты, поэтому его сокращение создаёт для медведей проблемы."
+    q: "Как называется светящееся явление в полярном небе?",
+    a: ["Радуга", "Молния", "Северное сияние", "Мираж"],
+    c: 2,
+    e: "Полярное сияние возникает из-за взаимодействия заряженных частиц с атмосферой."
   },
   {
-    q: "12. Что помогает сохранить природу Арктики?",
-    a: ["Загрязнение морей", "Разрушение мест обитания", "Научные исследования и охрана экосистем", "Бесконтрольная охота"],
-    correct: 2,
-    info: "Исследования, сокращение загрязнения и защита мест обитания помогают сохранять арктическую природу."
+    q: "Какое судно прошло Северо-Восточный проход в 1878–1879 годах?",
+    a: ["Вега", "Титаник", "Аврора", "Восток"],
+    c: 0,
+    e: "Экспедиция Адольфа Норденшельда на судне «Вега» прошла этот путь."
   }
 ];
 
 let current = 0;
-let score = 0;
+let points = 0;
 let answered = false;
 
 const questionEl = document.getElementById("question");
 const answersEl = document.getElementById("answers");
-const explanationEl = document.getElementById("explanation");
-const counterEl = document.getElementById("questionCounter");
-const scoreEl = document.getElementById("scoreCounter");
-const progressEl = document.getElementById("progressBar");
-const nextButton = document.getElementById("nextButton");
 const feedbackEl = document.getElementById("feedback");
+const nextBtn = document.getElementById("next");
+const progressEl = document.getElementById("progress");
+const statusEl = document.getElementById("quiz-status");
+const scoreEl = document.getElementById("score");
 
-function showQuestion() {
+function renderQuestion() {
   answered = false;
   const item = questions[current];
-  counterEl.textContent = `Вопрос ${current + 1} из ${questions.length}`;
-  scoreEl.textContent = `Баллы: ${score}`;
-  progressEl.style.width = `${(current / questions.length) * 100}%`;
+  statusEl.textContent = `Вопрос ${current + 1} из ${questions.length}`;
   questionEl.textContent = item.q;
-  explanationEl.textContent = "";
   feedbackEl.textContent = "";
-  nextButton.style.display = "none";
+  scoreEl.textContent = `Правильных ответов: ${points}`;
+  progressEl.style.width = `${(current / questions.length) * 100}%`;
+  nextBtn.disabled = true;
+  nextBtn.textContent = current === questions.length - 1
+    ? "Узнать результат"
+    : "Следующий вопрос →";
   answersEl.innerHTML = "";
 
   item.a.forEach((answer, index) => {
     const button = document.createElement("button");
-    button.type = "button";
     button.className = "answer";
     button.textContent = answer;
-    button.addEventListener("click", () => chooseAnswer(index));
+    button.addEventListener("click", () => chooseAnswer(index, button));
     answersEl.appendChild(button);
   });
 }
 
-function chooseAnswer(index) {
+function chooseAnswer(index, button) {
   if (answered) return;
   answered = true;
 
   const item = questions[current];
-  const buttons = [...answersEl.querySelectorAll(".answer")];
-  buttons.forEach(button => button.disabled = true);
-  buttons[item.correct].classList.add("correct");
+  const buttons = [...answersEl.querySelectorAll("button")];
+  buttons.forEach((b, i) => {
+    b.disabled = true;
+    if (i === item.c) b.classList.add("correct");
+  });
 
-  if (index === item.correct) {
-    score++;
-    feedbackEl.textContent = "Верно! +1 балл";
-    feedbackEl.style.color = "#7be6ae";
+  if (index === item.c) {
+    points++;
+    feedbackEl.textContent = "✅ Верно! " + item.e;
   } else {
-    buttons[index].classList.add("wrong");
-    feedbackEl.textContent = "Не совсем правильно";
-    feedbackEl.style.color = "#ffaaaa";
+    button.classList.add("wrong");
+    feedbackEl.textContent = "❌ Не совсем. " + item.e;
   }
 
-  scoreEl.textContent = `Баллы: ${score}`;
-  explanationEl.textContent = item.info;
+  scoreEl.textContent = `Правильных ответов: ${points}`;
   progressEl.style.width = `${((current + 1) / questions.length) * 100}%`;
-  nextButton.textContent = current === questions.length - 1 ? "Посмотреть результат →" : "Следующий вопрос →";
-  nextButton.style.display = "inline-block";
+  nextBtn.disabled = false;
 }
 
 function showResult() {
-  document.getElementById("quizGame").classList.add("hidden");
-  document.getElementById("result").classList.remove("hidden");
-  document.getElementById("finalScore").textContent = `${score} из ${questions.length}`;
+  statusEl.textContent = "Викторина завершена";
+  progressEl.style.width = "100%";
+  questionEl.textContent = `Твой результат: ${points} из ${questions.length}`;
+  answersEl.innerHTML = "";
+  scoreEl.textContent = "";
 
-  let text;
-  if (score === questions.length) {
-    text = "Отлично! Ты настоящий исследователь Арктики. Ты отлично знаешь её природу и историю.";
-  } else if (score >= 9) {
-    text = "Прекрасный результат! Ты хорошо разбираешься в Арктике.";
-  } else if (score >= 6) {
-    text = "Хорошая работа! Прочитай разделы сайта ещё раз и попробуй улучшить результат.";
+  let message;
+  if (points >= 10) {
+    message = "Отличный результат! Ты хорошо знаешь Арктику.";
+  } else if (points >= 7) {
+    message = "Хороший результат! Ещё немного — и ты станешь экспертом.";
+  } else if (points >= 4) {
+    message = "Неплохо! Перечитай разделы сайта и попробуй ещё раз.";
   } else {
-    text = "Это только начало исследования! Изучи животных, историю и факты, а затем пройди викторину снова.";
+    message = "Это начало путешествия! Изучи сайт и пройди викторину снова.";
   }
-  document.getElementById("resultText").textContent = text;
+
+  feedbackEl.textContent = message;
+  nextBtn.textContent = "Пройти заново";
+  nextBtn.disabled = false;
+  nextBtn.onclick = restartQuiz;
 }
 
-nextButton.addEventListener("click", () => {
+function restartQuiz() {
+  current = 0;
+  points = 0;
+  nextBtn.onclick = nextQuestion;
+  renderQuestion();
+}
+
+function nextQuestion() {
   if (!answered) return;
   if (current < questions.length - 1) {
     current++;
-    showQuestion();
+    renderQuestion();
   } else {
     showResult();
   }
-});
+}
 
-document.getElementById("restartButton").addEventListener("click", () => {
-  current = 0;
-  score = 0;
-  document.getElementById("result").classList.add("hidden");
-  document.getElementById("quizGame").classList.remove("hidden");
-  showQuestion();
-});
-
-showQuestion();
+nextBtn.addEventListener("click", nextQuestion);
+renderQuestion();
 </script>
 </body>
 </html>
