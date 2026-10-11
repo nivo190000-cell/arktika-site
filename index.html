@@ -3,449 +3,276 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Арктика — мир льда и жизни</title>
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: #071522;
-  color: #f3f8fc;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-}
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: #091b2b;
-  border-bottom: 1px solid #254257;
-}
-
-nav {
-  max-width: 1200px;
-  margin: auto;
-  padding: 18px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.logo {
-  font-size: 23px;
-  font-weight: bold;
-  color: #70dcff;
-}
-
-nav a {
-  color: #f3f8fc;
-  text-decoration: none;
-  margin-left: 15px;
-}
-
-nav a:hover { color: #70dcff; }
-
-.hero {
-  min-height: 570px;
-  display: flex;
-  align-items: center;
-  padding: 70px 8%;
-  background:
-    linear-gradient(90deg, #061522 5%, rgba(6,21,34,.75) 50%, rgba(6,21,34,.15)),
-    url("https://images.unsplash.com/photo-1551415923-a2297c7fda79?auto=format&fit=crop&w=1800&q=85")
-    center/cover no-repeat;
-}
-
-.hero-content { max-width: 720px; }
-
-.eyebrow {
-  color: #70dcff;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 13px;
-  font-weight: bold;
-}
-
-h1 {
-  font-size: clamp(40px, 6vw, 72px);
-  line-height: 1.08;
-  margin: 18px 0;
-}
-
-.hero p {
-  font-size: 19px;
-  color: #d5e5ef;
-  margin-bottom: 28px;
-}
-
-.button {
-  display: inline-block;
-  padding: 13px 22px;
-  background: #70dcff;
-  color: #071522;
-  border: none;
-  border-radius: 7px;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 15px;
-}
-
-section {
-  max-width: 1200px;
-  margin: auto;
-  padding: 70px 24px;
-}
-
-.section-title {
-  font-size: 36px;
-  margin-bottom: 12px;
-}
-
-.section-description {
-  color: #b7cbd8;
-  max-width: 800px;
-  margin-bottom: 30px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
-}
-
-.card {
-  overflow: hidden;
-  border: 1px solid #29475a;
-  border-radius: 13px;
-  background: #102638;
-  transition: transform .2s;
-}
-
-.card:hover { transform: translateY(-5px); }
-
-.card img {
-  width: 100%;
-  height: 225px;
-  object-fit: cover;
-  display: block;
-  background: #18394d;
-}
-
-.card-content { padding: 20px; }
-
-.label {
-  color: #70dcff;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-}
-
-.card h3 {
-  font-size: 22px;
-  margin: 6px 0 10px;
-}
-
-.card p { color: #b7cbd8; }
-
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.info {
-  background: #102638;
-  border: 1px solid #29475a;
-  border-radius: 12px;
-  padding: 24px;
-}
-
-.info h3 {
-  color: #70dcff;
-  margin-bottom: 10px;
-}
-
-.timeline {
-  border-left: 3px solid #70dcff;
-  padding-left: 22px;
-  margin-top: 25px;
-}
-
-.timeline article { margin-bottom: 25px; }
-.timeline h3 { color: #70dcff; }
-.timeline p { color: #b7cbd8; }
-
-.quiz {
-  padding: 28px;
-  background: #102638;
-  border: 1px solid #29475a;
-  border-radius: 13px;
-}
-
-.quiz h3 { margin-bottom: 20px; }
-
-.quiz button {
-  margin: 5px;
-}
-
-#answer {
-  margin-top: 18px;
-  font-weight: bold;
-}
-
-footer {
-  text-align: center;
-  color: #b7cbd8;
-  padding: 30px 20px;
-  border-top: 1px solid #254257;
-}
-
-@media (max-width: 650px) {
-  nav { justify-content: center; }
-  nav a { margin: 0 6px; }
-  .hero { min-height: 480px; padding: 45px 24px; }
-  section { padding: 48px 18px; }
-  .section-title { font-size: 29px; }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#071522;color:#f4f9ff;line-height:1.6}
+header{position:sticky;top:0;z-index:5;background:#091b2b;border-bottom:1px solid #29485c}
+nav{max-width:1150px;margin:auto;padding:16px 22px;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.logo{font-size:23px;font-weight:bold;color:#73ddff}
+nav a{color:#fff;text-decoration:none;margin-left:12px}
+nav a:hover{color:#73ddff}
+.hero{min-height:540px;padding:80px 8%;display:flex;align-items:center;background:linear-gradient(120deg,#071522,#103d58,#4c92ad)}
+.hero-content{max-width:700px}
+.eyebrow{color:#73ddff;letter-spacing:3px;font-weight:bold}
+h1{font-size:clamp(40px,7vw,72px);line-height:1.08;margin:16px 0}
+.hero p{font-size:19px;color:#e0eff8;margin-bottom:25px}
+.button{display:inline-block;padding:12px 22px;border:0;border-radius:8px;background:#73ddff;color:#071522;font-weight:bold;text-decoration:none;cursor:pointer;font-size:15px}
+section{max-width:1150px;margin:auto;padding:65px 22px}
+h2{font-size:34px;margin-bottom:12px}
+.intro{color:#b9cedc;max-width:800px;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:22px}
+.card{overflow:hidden;background:#102638;border:1px solid #29485c;border-radius:13px;transition:transform .2s}
+.card:hover{transform:translateY(-4px)}
+.art{height:220px;background:#183e55;overflow:hidden}
+.art svg{width:100%;height:100%;display:block}
+.card-content{padding:19px}
+.label{font-size:12px;color:#73ddff;text-transform:uppercase;letter-spacing:1.5px}
+h3{font-size:21px;margin:5px 0 9px}
+.card p,.info p{color:#b9cedc}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.info{background:#102638;border:1px solid #29485c;border-radius:12px;padding:23px}
+.info h3{color:#73ddff}
+.timeline{border-left:3px solid #73ddff;padding-left:22px;margin-top:25px}
+.timeline article{margin-bottom:24px}
+.timeline h3{color:#73ddff}
+.timeline p{color:#b9cedc}
+.quiz{background:#102638;border:1px solid #29485c;border-radius:13px;padding:25px}
+.quiz button{margin:7px 7px 7px 0}
+#result{margin-top:15px;font-weight:bold}
+footer{text-align:center;padding:28px 18px;border-top:1px solid #29485c;color:#b9cedc}
+@media(max-width:600px){
+ nav{justify-content:center}
+ nav a{margin:0 5px;font-size:14px}
+ .hero{padding:55px 23px;min-height:450px}
+ section{padding:45px 17px}
+ h2{font-size:29px}
 }
 </style>
 </head>
 
 <body>
-
 <header>
-  <nav>
-    <div class="logo">❄ АРКТИКА</div>
-    <div>
-      <a href="#about">О регионе</a>
-      <a href="#animals">Животные</a>
-      <a href="#history">История</a>
-      <a href="#quiz">Викторина</a>
-    </div>
-  </nav>
+<nav>
+  <div class="logo">❄ АРКТИКА</div>
+  <div>
+    <a href="#about">Об Арктике</a>
+    <a href="#animals">Животные</a>
+    <a href="#history">История</a>
+    <a href="#quiz">Викторина</a>
+  </div>
+</nav>
 </header>
 
 <main>
-
 <div class="hero">
   <div class="hero-content">
-    <div class="eyebrow">На краю Земли</div>
+    <div class="eyebrow">МИР НА КРАЮ ЗЕМЛИ</div>
     <h1>Арктика — мир льда и жизни</h1>
-    <p>
-      Исследуй удивительный северный мир: бескрайние ледяные
-      просторы, необычных животных и завораживающее северное сияние.
-    </p>
-    <a href="#about" class="button">Начать исследование</a>
+    <p>Открой удивительный северный мир: ледяные пустыни, необычных животных и сияющее небо.</p>
+    <a class="button" href="#about">Начать исследование</a>
   </div>
 </div>
 
 <section id="about">
-  <h2 class="section-title">Что такое Арктика?</h2>
-  <p class="section-description">
-    Арктика — полярная область на севере Земли. Она включает
-    Северный Ледовитый океан, острова и северные окраины материков.
-    Здесь суровый климат, большие пространства морского льда
-    и уникальная природа.
-  </p>
-
-  <div class="info-grid">
-    <div class="info">
-      <h3>❄ Суровый климат</h3>
-      <p>Зимы очень холодные, а лето короткое и прохладное.</p>
-    </div>
-    <div class="info">
-      <h3>🌌 Северное сияние</h3>
-      <p>Красивое свечение неба, которое возникает при взаимодействии солнечных частиц с атмосферой.</p>
-    </div>
-    <div class="info">
-      <h3>☀ Полярный день</h3>
-      <p>В определённое время года Солнце может не заходить за горизонт сутками и даже месяцами.</p>
-    </div>
-  </div>
+<h2>Что такое Арктика?</h2>
+<p class="intro">Арктика — северная полярная область Земли. Она включает Северный Ледовитый океан, острова и северные окраины материков. Здесь встречаются морской лёд, тундра и уникальные животные.</p>
+<div class="info-grid">
+  <div class="info"><h3>❄ Суровый климат</h3><p>Зимы очень холодные, а лето короткое и прохладное.</p></div>
+  <div class="info"><h3>🌌 Северное сияние</h3><p>Красочные световые полосы возникают при взаимодействии солнечных частиц с атмосферой.</p></div>
+  <div class="info"><h3>☀ Полярный день</h3><p>В определённое время года Солнце может не заходить за горизонт целыми сутками.</p></div>
+</div>
 </section>
 
 <section id="animals">
-  <h2 class="section-title">Животные Арктики</h2>
-  <p class="section-description">
-    Животные севера приспособились к холоду благодаря густому меху,
-    слою подкожного жира и другим особенностям.
-  </p>
+<h2>Животные Арктики</h2>
+<p class="intro">Эти иллюстрации нарисованы прямо в коде сайта. Для их отображения не нужны внешние ссылки или фотохостинги.</p>
+<div class="grid">
 
-  <div class="grid">
+<article class="card">
+<div class="art">
+<svg viewBox="0 0 400 240" role="img" aria-label="Иллюстрация белого медведя">
+<defs><linearGradient id="sky1" x2="0" y2="1"><stop stop-color="#174761"/><stop offset="1" stop-color="#b5e5ef"/></linearGradient></defs>
+<rect width="400" height="240" fill="url(#sky1)"/>
+<circle cx="320" cy="45" r="23" fill="#f5ffff" opacity=".8"/>
+<path d="M0 175 L80 120 140 169 215 105 300 168 355 125 400 160V240H0Z" fill="#d6f1f5"/>
+<path d="M0 207Q90 185 170 211T400 201V240H0Z" fill="#fff"/>
+<ellipse cx="205" cy="164" rx="91" ry="43" fill="#f8ffff"/>
+<ellipse cx="284" cy="138" rx="37" ry="34" fill="#f8ffff"/>
+<circle cx="259" cy="111" r="13" fill="#f8ffff"/>
+<circle cx="293" cy="106" r="13" fill="#f8ffff"/>
+<circle cx="259" cy="111" r="6" fill="#d6e5ea"/>
+<circle cx="293" cy="106" r="6" fill="#d6e5ea"/>
+<ellipse cx="309" cy="144" rx="10" ry="7" fill="#253746"/>
+<circle cx="294" cy="132" r="3.5" fill="#253746"/>
+<path d="M157 179L145 205 176 205 186 181M242 179L252 204 280 204 270 172" fill="#edf7f8"/>
+<path d="M0 222Q100 210 190 226T400 216V240H0Z" fill="#c2e5ee"/>
+</svg>
+</div>
+<div class="card-content"><div class="label">Хищник</div><h3>Белый медведь</h3><p>Крупный арктический хищник. Он хорошо плавает и охотится преимущественно на тюленей.</p></div>
+</article>
 
-    <article class="card">
-      <img
-        src="https://images.unsplash.com/photo-1589656966895-2f33e7653819?auto=format&fit=crop&w=900&q=80"
-        alt="Белый медведь"
-        loading="lazy">
-      <div class="card-content">
-        <div class="label">Хищник</div>
-        <h3>Белый медведь</h3>
-        <p>Крупный арктический хищник, который отлично плавает и охотится преимущественно на тюленей.</p>
-      </div>
-    </article>
+<article class="card">
+<div class="art">
+<svg viewBox="0 0 400 240" role="img" aria-label="Иллюстрация песца">
+<rect width="400" height="240" fill="#a7dce9"/>
+<circle cx="320" cy="43" r="24" fill="#f8ffff"/>
+<path d="M0 160L80 110 143 158 230 96 303 153 359 120 400 147V240H0Z" fill="#eaf8fb"/>
+<path d="M0 205Q90 183 190 210T400 202V240H0Z" fill="#fff"/>
+<path d="M95 166Q48 133 35 163Q48 192 105 185Z" fill="#f9ffff"/>
+<ellipse cx="199" cy="166" rx="81" ry="41" fill="#fff"/>
+<path d="M245 148Q255 113 291 120L321 149 295 176 252 173Z" fill="#fff"/>
+<path d="M270 126L276 100 291 121M298 122L315 103 317 139" fill="#f8ffff"/>
+<path d="M277 112L278 125 287 122M306 115L311 127 316 123" fill="#d6e6ee"/>
+<circle cx="295" cy="141" r="4" fill="#263a4a"/>
+<path d="M316 153L326 158 316 162Z" fill="#253746"/>
+<path d="M153 186L144 205 169 205 179 183M223 184L230 205 254 205 250 174" fill="#f6ffff"/>
+</svg>
+</div>
+<div class="card-content"><div class="label">Млекопитающее</div><h3>Песец</h3><p>Небольшой житель тундры. Его густой мех помогает сохранять тепло даже в сильный мороз.</p></div>
+</article>
 
-    <article class="card">
-      <img
-        src="https://images.unsplash.com/photo-1516934024742-b461fba47600?auto=format&fit=crop&w=900&q=80"
-        alt="Северная лиса"
-        loading="lazy">
-      <div class="card-content">
-        <div class="label">Млекопитающее</div>
-        <h3>Песец</h3>
-        <p>Небольшой обитатель тундры. Его густой мех помогает переносить сильные морозы.</p>
-      </div>
-    </article>
+<article class="card">
+<div class="art">
+<svg viewBox="0 0 400 240" role="img" aria-label="Иллюстрация моржа">
+<rect width="400" height="240" fill="#16455d"/>
+<path d="M0 65Q80 35 160 67T320 59T400 65V240H0Z" fill="#28738c"/>
+<path d="M0 183L65 154 125 178 194 143 266 180 340 150 400 176V240H0Z" fill="#d6f1f5"/>
+<ellipse cx="194" cy="160" rx="105" ry="48" fill="#956c4e"/>
+<ellipse cx="278" cy="133" rx="44" ry="39" fill="#a98260"/>
+<circle cx="245" cy="103" r="14" fill="#a98260"/>
+<circle cx="285" cy="98" r="14" fill="#a98260"/>
+<circle cx="245" cy="103" r="6" fill="#d9b28d"/>
+<circle cx="285" cy="98" r="6" fill="#d9b28d"/>
+<circle cx="289" cy="126" r="4" fill="#211d1a"/>
+<ellipse cx="309" cy="143" rx="13" ry="9" fill="#c89e7c"/>
+<path d="M300 151Q294 177 305 188Q317 181 313 152" fill="#fff4d9"/>
+<path d="M321 150Q319 178 330 184Q338 173 329 148" fill="#fff4d9"/>
+<path d="M124 185L100 204 143 207 164 191M220 191L248 207 275 201 253 178" fill="#956c4e"/>
+<path d="M0 218Q120 205 210 222T400 215V240H0Z" fill="#b8e4ed"/>
+</svg>
+</div>
+<div class="card-content"><div class="label">Морской обитатель</div><h3>Морж</h3><p>Крупное морское млекопитающее с длинными бивнями и толстым слоем подкожного жира.</p></div>
+</article>
 
-    <article class="card">
-      <img
-        src="https://images.unsplash.com/photo-1551244072-5d12893278ab?auto=format&fit=crop&w=900&q=80"
-        alt="Морское животное"
-        loading="lazy">
-      <div class="card-content">
-        <div class="label">Морской обитатель</div>
-        <h3>Морж</h3>
-        <p>Крупное морское млекопитающее с длинными бивнями и толстым слоем подкожного жира.</p>
-      </div>
-    </article>
+<article class="card">
+<div class="art">
+<svg viewBox="0 0 400 240" role="img" aria-label="Иллюстрация полярной совы">
+<rect width="400" height="240" fill="#264b63"/>
+<circle cx="320" cy="48" r="25" fill="#e7fbff"/>
+<g fill="#a1f0d3" opacity=".85"><path d="M0 55Q80 10 150 53T300 43T400 35V80Q300 92 230 68T0 91Z"/><path d="M20 99Q100 60 185 92T380 85V110Q250 127 160 106T20 124Z"/></g>
+<path d="M0 192L70 159 130 190 220 145 295 186 360 153 400 180V240H0Z" fill="#d7edf3"/>
+<path d="M140 192L153 118 192 84 231 117 251 192Z" fill="#f5fbfc"/>
+<path d="M153 118L134 91 174 103M231 117L252 91 211 103" fill="#f5fbfc"/>
+<ellipse cx="176" cy="132" rx="19" ry="22" fill="#b9d5df"/>
+<ellipse cx="209" cy="132" rx="19" ry="22" fill="#b9d5df"/>
+<circle cx="176" cy="132" r="10" fill="#e9c85e"/>
+<circle cx="209" cy="132" r="10" fill="#e9c85e"/>
+<circle cx="176" cy="132" r="5" fill="#182633"/>
+<circle cx="209" cy="132" r="5" fill="#182633"/>
+<path d="M189 147L198 147 193 156Z" fill="#e9b65e"/>
+<path d="M160 171Q193 188 225 171L218 200H168Z" fill="#d5e6ec"/>
+<path d="M193 188V205" stroke="#d1a65b" stroke-width="5"/>
+</svg>
+</div>
+<div class="card-content"><div class="label">Птица</div><h3>Полярная сова</h3><p>Крупная северная сова со светлым оперением. Охотится на леммингов и других мелких животных.</p></div>
+</article>
 
-    <article class="card">
-      <img
-        src="https://images.unsplash.com/photo-1549608276-5786777e6587?auto=format&fit=crop&w=900&q=80"
-        alt="Полярная птица"
-        loading="lazy">
-      <div class="card-content">
-        <div class="label">Птица</div>
-        <h3>Полярная сова</h3>
-        <p>Светлая северная сова, которая охотится на леммингов и других мелких животных.</p>
-      </div>
-    </article>
+<article class="card">
+<div class="art">
+<svg viewBox="0 0 400 240" role="img" aria-label="Иллюстрация северного оленя">
+<rect width="400" height="240" fill="#8bc6d9"/>
+<circle cx="325" cy="43" r="23" fill="#f7ffff"/>
+<path d="M0 174L80 128 147 173 220 116 310 172 365 132 400 158V240H0Z" fill="#e4f4f7"/>
+<ellipse cx="180" cy="164" rx="65" ry="36" fill="#9a7756"/>
+<path d="M222 153L250 119 278 128 272 163 242 174Z" fill="#a98763"/>
+<path d="M251 126L251 101 261 86 256 66M260 87L277 75 281 61M253 102L237 88 234 72" fill="none" stroke="#72563e" stroke-width="6" stroke-linecap="round"/>
+<path d="M267 129L280 111 290 106" fill="none" stroke="#72563e" stroke-width="5" stroke-linecap="round"/>
+<ellipse cx="273" cy="145" rx="16" ry="11" fill="#b99a79"/>
+<circle cx="265" cy="128" r="4" fill="#1c2d36"/>
+<path d="M150 184L145 212 158 212 168 184M201 184L204 212 217 212 219 175" fill="#8c694a"/>
+<path d="M0 214Q100 200 220 220T400 211V240H0Z" fill="#fff"/>
+</svg>
+</div>
+<div class="card-content"><div class="label">Травоядное</div><h3>Северный олень</h3><p>Обитает в тундре. Широкие копыта помогают передвигаться по снегу и рыхлой земле.</p></div>
+</article>
 
-    <article class="card">
-      <img
-        src="https://images.unsplash.com/photo-1551986782-d0169b3f8fa7?auto=format&fit=crop&w=900&q=80"
-        alt="Птица в природе"
-        loading="lazy">
-      <div class="card-content">
-        <div class="label">Морская птица</div>
-        <h3>Морские птицы</h3>
-        <p>На скалистых берегах Арктики гнездятся кайры, чистики, чайки и другие птицы.</p>
-      </div>
-    </article>
+<article class="card">
+<div class="art">
+<svg viewBox="0 0 400 240" role="img" aria-label="Иллюстрация тюленя на льду">
+<rect width="400" height="240" fill="#246079"/>
+<path d="M0 180L70 149 137 173 218 132 300 177 355 150 400 167V240H0Z" fill="#d5edf4"/>
+<path d="M0 208Q100 195 200 213T400 205V240H0Z" fill="#fff"/>
+<ellipse cx="202" cy="165" rx="95" ry="39" fill="#8ba9b7"/>
+<ellipse cx="277" cy="145" rx="36" ry="31" fill="#9fb9c4"/>
+<circle cx="265" cy="138" r="4" fill="#263944"/>
+<ellipse cx="293" cy="151" rx="12" ry="8" fill="#d2e0e5"/>
+<circle cx="290" cy="149" r="2" fill="#283a44"/>
+<path d="M290 156L305 163M291 159L307 170M286 156L281 168" stroke="#425c69" stroke-width="2"/>
+<path d="M143 178Q105 195 93 179Q110 164 139 164" fill="#8ba9b7"/>
+<path d="M175 188Q166 207 148 204L171 180M231 188Q250 203 269 193L245 177" fill="#8ba9b7"/>
+<g fill="#506d7a"><circle cx="184" cy="150" r="3"/><circle cx="202" cy="164" r="3"/><circle cx="223" cy="149" r="3"/><circle cx="241" cy="166" r="3"/><circle cx="193" cy="181" r="3"/></g>
+</svg>
+</div>
+<div class="card-content"><div class="label">Морское млекопитающее</div><h3>Тюлень</h3><p>Прекрасно плавает в холодной воде и отдыхает на льдинах. Некоторые виды живут в Арктике круглый год.</p></div>
+</article>
 
-    <article class="card">
-      <img
-        src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?auto=format&fit=crop&w=900&q=80"
-        alt="Дикое животное"
-        loading="lazy">
-      <div class="card-content">
-        <div class="label">Обитатель севера</div>
-        <h3>Северные животные</h3>
-        <p>Многие виды зависят от состояния тундры, морского льда и доступности пищи.</p>
-      </div>
-    </article>
-
-  </div>
+</div>
 </section>
 
 <section id="history">
-  <h2 class="section-title">История исследования Арктики</h2>
-  <p class="section-description">
-    Исследователи постепенно открывали северные острова,
-    изучали океан и искали новые морские маршруты.
-  </p>
-
-  <div class="timeline">
-    <article>
-      <h3>XVI–XVII века</h3>
-      <p>Мореплаватели исследовали северные моря и искали пути в Азию.</p>
-    </article>
-    <article>
-      <h3>XIX век</h3>
-      <p>Экспедиции изучали географию, климат и ледовые условия полярных регионов.</p>
-    </article>
-    <article>
-      <h3>XX век</h3>
-      <p>Развивались полярная авиация, научные станции и систематические исследования.</p>
-    </article>
-    <article>
-      <h3>XXI век</h3>
-      <p>Учёные наблюдают за изменением климата, морским льдом и состоянием экосистем.</p>
-    </article>
-  </div>
+<h2>История исследования Арктики</h2>
+<p class="intro">На протяжении веков исследователи изучали северные моря, острова и ледовые пространства.</p>
+<div class="timeline">
+  <article><h3>XVI–XVII века</h3><p>Мореплаватели искали северные морские пути в Азию и описывали новые территории.</p></article>
+  <article><h3>XIX век</h3><p>Экспедиции собирали сведения о географии, климате и полярных льдах.</p></article>
+  <article><h3>XX век</h3><p>Развивались авиация, полярные станции и научные наблюдения.</p></article>
+  <article><h3>Сегодня</h3><p>Учёные изучают изменение климата, морской лёд и состояние арктической природы.</p></article>
+</div>
 </section>
 
 <section id="nature">
-  <h2 class="section-title">Почему Арктику нужно беречь?</h2>
-  <div class="info-grid">
-    <div class="info">
-      <h3>Изменение климата</h3>
-      <p>Сокращение морского льда влияет на условия жизни полярных животных.</p>
-    </div>
-    <div class="info">
-      <h3>Загрязнение</h3>
-      <p>Мусор и вредные вещества угрожают морским организмам и птицам.</p>
-    </div>
-    <div class="info">
-      <h3>Защита природы</h3>
-      <p>Научные исследования и охрана территорий помогают сохранять северные экосистемы.</p>
-    </div>
-  </div>
+<h2>Почему Арктику нужно беречь?</h2>
+<div class="info-grid">
+  <div class="info"><h3>Изменение климата</h3><p>Сокращение морского льда меняет условия жизни многих арктических животных.</p></div>
+  <div class="info"><h3>Загрязнение</h3><p>Мусор и вредные вещества угрожают морским организмам и птицам.</p></div>
+  <div class="info"><h3>Защита природы</h3><p>Заповедники и научные исследования помогают сохранять северные экосистемы.</p></div>
+</div>
 </section>
 
 <section id="quiz">
-  <h2 class="section-title">Проверь свои знания</h2>
-  <div class="quiz">
-    <h3>Какое животное известно своими длинными бивнями?</h3>
-    <button class="button" onclick="checkAnswer(false)">Белый медведь</button>
-    <button class="button" onclick="checkAnswer(true)">Морж</button>
-    <button class="button" onclick="checkAnswer(false)">Песец</button>
-    <p id="answer" aria-live="polite"></p>
-  </div>
+<h2>Проверь свои знания</h2>
+<div class="quiz">
+  <h3>Какое животное известно своими длинными бивнями?</h3>
+  <button class="button" onclick="check(false)">Белый медведь</button>
+  <button class="button" onclick="check(true)">Морж</button>
+  <button class="button" onclick="check(false)">Песец</button>
+  <p id="result" aria-live="polite"></p>
+</div>
 </section>
 
 </main>
 
 <footer>
-  <p>❄ Арктика — удивительный мир, который стоит изучать и беречь.</p>
-  <p>Учебный проект об арктической природе</p>
+<p>❄ Арктика — удивительный мир, который стоит изучать и беречь.</p>
+<p>Учебный проект об арктической природе</p>
 </footer>
 
 <script>
-function checkAnswer(correct) {
-  const output = document.getElementById("answer");
-
+function check(correct) {
+  const result = document.getElementById("result");
   if (correct) {
-    output.textContent = "Правильно! У моржа есть длинные бивни.";
-    output.style.color = "#70dcff";
+    result.textContent = "Правильно! У моржа длинные бивни.";
+    result.style.color = "#73ddff";
   } else {
-    output.textContent = "Попробуй ещё раз!";
-    output.style.color = "#ffd080";
+    result.textContent = "Не совсем! Попробуй ещё раз.";
+    result.style.color = "#ffd080";
   }
 }
-
-/* Запасная картинка, если основной адрес не загрузился. */
-document.querySelectorAll("img").forEach(function(img) {
-  img.addEventListener("error", function() {
-    if (img.dataset.retried) return;
-
-    img.dataset.retried = "true";
-    img.src =
-      "https://images.unsplash.com/photo-1551415923-a2297c7fda79?auto=format&fit=crop&w=900&q=80";
-  });
-});
 </script>
-
 </body>
 </html>
 ```
